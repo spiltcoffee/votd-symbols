@@ -667,7 +667,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.4.0":
+"@typescript-eslint/eslint-plugin@npm:^5.0.0, @typescript-eslint/eslint-plugin@npm:^5.4.0":
   version: 5.14.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.14.0"
   dependencies:
@@ -690,7 +690,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.4.0":
+"@typescript-eslint/parser@npm:^5.0.0, @typescript-eslint/parser@npm:^5.4.0":
   version: 5.14.0
   resolution: "@typescript-eslint/parser@npm:5.14.0"
   dependencies:
@@ -1031,17 +1031,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/eslint-config-typescript@npm:^9.1.0":
-  version: 9.1.0
-  resolution: "@vue/eslint-config-typescript@npm:9.1.0"
+"@vue/eslint-config-typescript@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "@vue/eslint-config-typescript@npm:10.0.0"
   dependencies:
-    vue-eslint-parser: ^8.0.0
-  peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
+    vue-eslint-parser: ^8.0.0
+  peerDependencies:
     eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
     eslint-plugin-vue: ^8.0.1
-  checksum: 5be40d8ecdf2b1d8b7426ec77e664550235842d92eaebbf3e8152163b8d95e045d09ed18a784e9bee47daf1109e7e7c4e1d3fdb43eb4b6f8479efde5df9b81cb
+  checksum: 8af585db57ea4cd24a00e0ef21db077d911237f8db76c4147a98ba0b975f2b5ebc85d5ce7b9abb0e8a9a32cd2ad5030e62b3d1ddeb9ac47a740a8bc4eae46f97
   languageName: node
   linkType: hard
 
@@ -7501,7 +7501,7 @@ __metadata:
     "@vue/cli-plugin-eslint": ~5.0.0
     "@vue/cli-plugin-typescript": ~5.0.0
     "@vue/cli-service": ~5.0.0
-    "@vue/eslint-config-typescript": ^9.1.0
+    "@vue/eslint-config-typescript": ^10.0.0
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
