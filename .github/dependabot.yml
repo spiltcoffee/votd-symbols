@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "spiltcoffee"
+    commit-message:
+      prefix: "build(actions)"
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "spiltcoffee"
+    commit-message:
+      prefix: "build(npm)"
+      prefix-development: "build(npm-dev)"
