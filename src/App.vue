@@ -42,6 +42,31 @@
       </v-btn>
     </v-app-bar>
 
+    <v-navigation-drawer v-model="drawer" fixed temporary>
+      <v-list dense nav>
+        <v-list-item>
+          <v-switch
+            v-model="$vuetify.theme.dark"
+            inset
+            label="Use the Darkness"
+            persistent-hint
+          ></v-switch>
+        </v-list-item>
+        <v-list-item>
+          <v-slider
+            v-model="width"
+            label="Symbol Size"
+            max="400"
+            min="50"
+            thumb-label="always"
+            step="5"
+          >
+            <template v-slot:thumb-label="{ value }"> {{ value }}px </template>
+          </v-slider>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-main>
       <SymbolCollection
         :collection="editing ? editingCollection : collection"
