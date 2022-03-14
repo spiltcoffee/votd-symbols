@@ -1,0 +1,25 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup node.js 16
+        uses: actions/setup-node@v3.0.0
+        with:
+          node-version: 16
+          cache: yarn
+
+      - run: yarn install --immutable
+      - run: yarn lint --max-warnings 0
+      - run: yarn build
+      - name: check git is clean
+        run: 'git add . && git diff-index --quiet HEAD || (git reset --quiet && echo "Error: changed files" && git status --porcelain && exit 1)'
