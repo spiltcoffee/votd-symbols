@@ -7,4 +7,5 @@ module.exports = defineConfig({
       return args;
     });
   },
+  publicPath: process.env.VOTD_SYMBOLS_PATH || "/",
 });
