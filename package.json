@@ -34,10 +34,8 @@
     "vuetify-loader": "^1.7.0",
     "webpack": "^5.70.0"
   },
-  "_id": "@",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
-  "packageManager": "yarn@3.2.0",
-  "readme": "ERROR: No README data found!"
+  "packageManager": "yarn@3.2.0"
 }
