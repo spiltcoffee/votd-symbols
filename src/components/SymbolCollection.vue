@@ -1,16 +1,22 @@
 <template>
   <v-container fluid>
     <v-row justify="space-around">
-      <v-col v-for="votdSymbol in collection" :key="votdSymbol.id" cols="auto">
-        <SymbolCard :votd-symbol="votdSymbol"></SymbolCard>
+      <v-col v-for="symbol in collection.symbols" :key="symbol.id" cols="auto">
+        <SymbolCard
+          :symbol="symbol"
+          @input="updateSymbol"
+          :width="width"
+          :editing="editing"
+        />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
-<script>
+<script lang="ts">
 import SymbolCard from "./SymbolCard.vue";
 import Vue from "vue";
+import { VotdSymbol, VotdSymbolCollection } from "@/symbols";
 
 export default Vue.extend({
   name: "SymbolCollection",
@@ -21,8 +27,23 @@ export default Vue.extend({
 
   props: {
     collection: {
-      type: Array,
+      type: Object,
       required: true,
+    },
+    width: {
+      type: Number,
+    },
+    editing: {
+      type: Boolean,
+    },
+  },
+
+  methods: {
+    updateSymbol(newSymbol: VotdSymbol) {
+      const collection = (this.collection as VotdSymbolCollection).map(
+        (symbol) => (symbol.id === newSymbol.id ? newSymbol : symbol)
+      );
+      this.$emit("input", collection);
     },
   },
 });

@@ -1,6 +1,13 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-btn icon v-if="!editing" class="invisible">
+        <v-icon>mdi-dummy</v-icon>
+      </v-btn>
+
+      <v-spacer></v-spacer>
+
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -10,17 +17,47 @@
           transition="scale-transition"
           width="40"
         />
-        Vow of the Disciple Symbol Helper
+        <v-toolbar-title>
+          {{ $vuetify.breakpoint.xs ? "VotD" : "Vow of the Disciple" }}
+          Symbol Helper
+        </v-toolbar-title>
       </div>
 
       <v-spacer></v-spacer>
+
+      <v-btn icon v-if="!editing" class="invisible">
+        <v-icon>mdi-dummy</v-icon>
+      </v-btn>
+
+      <v-btn icon v-if="!editing" @click="startEditing">
+        <v-icon>mdi-pencil</v-icon>
+      </v-btn>
+
+      <v-btn icon v-if="editing" @click="acceptEditing">
+        <v-icon>mdi-check</v-icon>
+      </v-btn>
+
+      <v-btn icon v-if="editing" @click="cancelEditing">
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-main>
-      <SymbolCollection :collection="collection"></SymbolCollection>
+      <SymbolCollection
+        :collection="editing ? editingCollection : collection"
+        @input="updateCollection"
+        :width="width"
+        :editing="editing"
+      />
     </v-main>
   </v-app>
 </template>
+
+<style scoped>
+.invisible {
+  visibility: hidden;
+}
+</style>
 
 <script lang="ts">
 import Vue from "vue";
@@ -35,12 +72,30 @@ export default Vue.extend({
   },
 
   data: () => ({
-    collection: VotdSymbolCollection.build(),
-    symbolWidth: 180,
+    collection: VotdSymbolCollection.default(),
+    editingCollection: null as unknown as VotdSymbolCollection,
+    width: 150,
+    editing: false,
+    drawer: false,
   }),
 
-  provide() {
-    return { symbolWidth: this.symbolWidth };
+  methods: {
+    updateCollection(newCollection: VotdSymbolCollection) {
+      this.editingCollection = newCollection;
+    },
+    startEditing() {
+      this.editing = true;
+      this.editingCollection = this.collection.clone();
+    },
+    acceptEditing() {
+      this.editing = false;
+      this.collection = this.editingCollection;
+      this.editingCollection = null as unknown as VotdSymbolCollection;
+    },
+    cancelEditing() {
+      this.editing = false;
+      this.editingCollection = null as unknown as VotdSymbolCollection;
+    },
   },
 });
 </script>

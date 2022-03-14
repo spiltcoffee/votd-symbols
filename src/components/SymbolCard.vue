@@ -1,12 +1,17 @@
 <template>
-  <v-card :width="symbolWidth">
+  <v-card :width="width">
     <v-img
-      :src="url"
+      :src="symbol.url"
       contain
       transition="scale-transition"
-      :width="symbolWidth"
-    ></v-img>
-    <v-card-title class="symbol-title">{{ name }}</v-card-title>
+      :width="width"
+    />
+    <v-text-field
+      v-if="editing"
+      :value="symbol.name"
+      @input="updateName"
+    ></v-text-field>
+    <v-card-title class="symbol-title" v-else>{{ symbol.name }}</v-card-title>
   </v-card>
 </template>
 
@@ -19,31 +24,29 @@
 </style>
 
 <script lang="ts">
-import { VotdSymbol } from "@/symbols";
 import Vue from "vue";
 
 export default Vue.extend({
   name: "SymbolCard",
 
   props: {
-    votdSymbol: {
+    symbol: {
       type: Object,
       required: true,
     },
+    width: {
+      type: Number,
+    },
+    editing: {
+      type: Boolean,
+    },
   },
 
-  inject: ["symbolWidth"],
-
-  computed: {
-    url: {
-      get(this: { votdSymbol: VotdSymbol }) {
-        return this.votdSymbol.url;
-      },
-    },
-    name: {
-      get(this: { votdSymbol: VotdSymbol }) {
-        return this.votdSymbol.name;
-      },
+  methods: {
+    updateName(newName: string) {
+      const symbol = this.symbol.clone();
+      symbol.name = newName;
+      this.$emit("input", symbol);
     },
   },
 });
