@@ -1,0 +1,13 @@
+pull_request_rules:
+  - name: merge dependabot pull request
+    conditions:
+      - author=dependabot[bot]
+      - -merged
+      - -closed
+      - -locked
+      - -conflict
+      - check-success=ci
+      - check-success=CodeQL
+    actions:
+      merge:
+        method: merge
