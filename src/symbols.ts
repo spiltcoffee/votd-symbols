@@ -2,7 +2,7 @@ import cloneDeep from "lodash.clonedeep";
 
 export class VotdSymbol {
   readonly id: string;
-  private readonly originalName: string;
+  readonly originalName: string;
   private customName = "";
 
   constructor(id: string, originalName: string) {

@@ -2,11 +2,6 @@
   <v-app>
     <v-app-bar app color="primary" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-btn icon v-if="!editing" class="invisible">
-        <v-icon>mdi-dummy</v-icon>
-      </v-btn>
-
-      <v-spacer></v-spacer>
 
       <div class="d-flex align-center">
         <v-img
@@ -23,14 +18,14 @@
         </v-toolbar-title>
       </div>
 
-      <v-spacer></v-spacer>
-
-      <v-btn icon v-if="!editing" class="invisible">
-        <v-icon>mdi-dummy</v-icon>
-      </v-btn>
+      <v-spacer />
 
       <v-btn icon v-if="!editing" @click="startEditing">
         <v-icon>mdi-pencil</v-icon>
+      </v-btn>
+
+      <v-btn icon v-if="editing" @click="resetEditing">
+        <v-icon>mdi-reload</v-icon>
       </v-btn>
 
       <v-btn icon v-if="editing" @click="acceptEditing">
@@ -43,26 +38,36 @@
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" fixed temporary>
-      <v-list dense nav>
+      <v-list nav>
         <v-list-item>
-          <v-switch
-            v-model="darkMode"
-            inset
-            label="Use the Darkness"
-            persistent-hint
-          ></v-switch>
+          <v-list-item-title> VotD Symbol Helper </v-list-item-title>
         </v-list-item>
+
+        <v-divider />
+
+        <v-list-item two-line>
+          <v-list-item-content>
+            <v-list-item-title> Symbol Size </v-list-item-title>
+            <v-slider
+              v-model="symbolWidth"
+              max="400"
+              min="50"
+              thumb-label
+              step="5"
+              dense
+              hide-details
+            >
+              <template v-slot:thumb-label="{ value }">
+                {{ value }}px
+              </template>
+            </v-slider>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-divider />
+
         <v-list-item>
-          <v-slider
-            v-model="symbolWidth"
-            label="Symbol Size"
-            max="400"
-            min="50"
-            thumb-label="always"
-            step="5"
-          >
-            <template v-slot:thumb-label="{ value }"> {{ value }}px </template>
-          </v-slider>
+          <v-switch v-model="darkMode" label="Use the Darkness"></v-switch>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -102,6 +107,7 @@ export default Vue.extend({
     width: 150,
     editing: false,
     drawer: false,
+    resetDialog: false,
   }),
 
   mounted() {
@@ -140,16 +146,26 @@ export default Vue.extend({
     updateCollection(newCollection: VotdSymbolCollection) {
       this.editingCollection = newCollection;
     },
+    resetEditing() {
+      this.resetDialog = true;
+    },
+    resetEditingConfirm() {
+      this.resetDialog = false;
+      this.collection = VotdSymbolCollection.default();
+      this.endEditing();
+    },
     startEditing() {
       this.editing = true;
       this.editingCollection = this.collection.clone();
     },
     acceptEditing() {
-      this.editing = false;
       this.collection = this.editingCollection;
-      this.editingCollection = null as unknown as VotdSymbolCollection;
+      this.endEditing();
     },
     cancelEditing() {
+      this.endEditing();
+    },
+    endEditing() {
       this.editing = false;
       this.editingCollection = null as unknown as VotdSymbolCollection;
     },

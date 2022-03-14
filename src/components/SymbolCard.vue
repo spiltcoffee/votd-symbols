@@ -8,6 +8,7 @@
     />
     <v-text-field
       v-if="editing"
+      :label="symbol.originalName"
       :value="symbol.name"
       @input="updateName"
     ></v-text-field>
