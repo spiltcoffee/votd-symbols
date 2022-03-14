@@ -46,7 +46,7 @@
       <v-list dense nav>
         <v-list-item>
           <v-switch
-            v-model="$vuetify.theme.dark"
+            v-model="darkMode"
             inset
             label="Use the Darkness"
             persistent-hint
@@ -54,7 +54,7 @@
         </v-list-item>
         <v-list-item>
           <v-slider
-            v-model="width"
+            v-model="symbolWidth"
             label="Symbol Size"
             max="400"
             min="50"
@@ -103,6 +103,38 @@ export default Vue.extend({
     editing: false,
     drawer: false,
   }),
+
+  mounted() {
+    try {
+      const lsSymbolWidth = localStorage.getItem("symbolWidth");
+      if (lsSymbolWidth) {
+        this.width = JSON.parse(lsSymbolWidth);
+      }
+    } catch {
+      // ignore
+    }
+  },
+
+  computed: {
+    darkMode: {
+      get() {
+        return this.$vuetify.theme.dark;
+      },
+      set(newDarkMode: boolean) {
+        this.$vuetify.theme.dark = newDarkMode;
+        localStorage.setItem("darkMode", JSON.stringify(newDarkMode));
+      },
+    },
+    symbolWidth: {
+      get() {
+        return this.width;
+      },
+      set(newWidth: number) {
+        this.width = newWidth;
+        localStorage.setItem("symbolWidth", JSON.stringify(newWidth));
+      },
+    },
+  },
 
   methods: {
     updateCollection(newCollection: VotdSymbolCollection) {
