@@ -142,6 +142,18 @@ export default Vue.extend({
     } catch {
       // ignore
     }
+
+    console.log(location.hash);
+
+    if (location.hash) {
+      try {
+        const query = location.hash.replace(/^#/, "");
+        this.collection = VotdSymbolCollection.parse(query);
+      } catch {
+        // ignore
+        location.hash = "";
+      }
+    }
   },
 
   computed: {
@@ -201,6 +213,7 @@ export default Vue.extend({
     endEditing() {
       this.editing = false;
       this.editingCollection = null as unknown as VotdSymbolCollection;
+      location.hash = VotdSymbolCollection.stringify(this.collection);
     },
   },
 });

@@ -1,4 +1,5 @@
 import cloneDeep from "lodash.clonedeep";
+import qs from "qs";
 
 export class VotdSymbol {
   readonly id: string;
@@ -50,6 +51,28 @@ export class VotdSymbolCollection {
 
   map(mapper: (symbol: VotdSymbol) => VotdSymbol) {
     return new VotdSymbolCollection(this.symbols.map(mapper));
+  }
+
+  static stringify(collection: VotdSymbolCollection): string {
+    return qs.stringify(
+      collection.symbols.reduce(
+        (obj, symbol) => ({
+          ...obj,
+          ...(symbol.customName ? { [symbol.id]: symbol.customName } : {}),
+        }),
+        {}
+      )
+    );
+  }
+
+  static parse(query: string): VotdSymbolCollection {
+    const customNames = <Record<string, string>>qs.parse(query, { depth: 0 });
+    return VotdSymbolCollection.default().map((symbol) => {
+      if (customNames[symbol.id]) {
+        symbol.name = customNames[symbol.id];
+      }
+      return symbol;
+    });
   }
 
   static default(): VotdSymbolCollection {
