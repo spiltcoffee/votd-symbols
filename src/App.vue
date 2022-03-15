@@ -48,6 +48,18 @@
 
         <v-divider />
 
+        <v-list-item>
+          <v-select
+            label="View"
+            v-model="viewObject"
+            :items="views"
+            item-text="name"
+            return-object
+          />
+        </v-list-item>
+
+        <v-divider />
+
         <v-list-item two-line>
           <v-list-item-content>
             <v-list-item-title>Size of Symbols</v-list-item-title>
@@ -114,6 +126,7 @@
 
     <v-main>
       <SymbolCollection
+        :view="view"
         :collection="editing ? editingCollection : collection"
         @input="updateCollection"
         :width="width"
@@ -151,8 +164,15 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { VotdSymbolCollection } from "./symbols";
+import { VotdSymbolCollection, VotdSymbolView } from "./symbols";
 import SymbolCollection from "./components/SymbolCollection.vue";
+
+const VIEWS = [
+  { name: "Default", view: VotdSymbolView.default },
+  { name: "Acquisition", view: VotdSymbolView.aquisition },
+  { name: "Extra Boss Chest", view: VotdSymbolView.extraChest },
+  { name: "Lore Puzzle Room", view: VotdSymbolView.lorePuzzle },
+];
 
 export default Vue.extend({
   name: "App",
@@ -170,6 +190,8 @@ export default Vue.extend({
     resetDialog: false,
     snackbar: false,
     snackbarText: "",
+    view: null as unknown as VotdSymbolView,
+    viewObject: VIEWS[0],
   }),
 
   mounted() {
@@ -219,6 +241,20 @@ export default Vue.extend({
         this.width = newWidth;
         localStorage.setItem("symbolWidth", JSON.stringify(newWidth));
       },
+    },
+    views: {
+      get() {
+        return VIEWS;
+      },
+    },
+  },
+
+  watch: {
+    viewObject: {
+      handler(newValue) {
+        this.view = newValue.view();
+      },
+      immediate: true,
     },
   },
 

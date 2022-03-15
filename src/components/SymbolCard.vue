@@ -1,5 +1,5 @@
 <template>
-  <v-card :width="width">
+  <v-card :width="width" :class="{ redacted: redacted && !editing }">
     <v-img
       :src="symbol.url"
       contain
@@ -19,6 +19,10 @@
 </template>
 
 <style scoped>
+.redacted {
+  opacity: 0.25;
+}
+
 .symbol-title {
   justify-content: center;
   text-align: center;
@@ -27,6 +31,7 @@
 </style>
 
 <script lang="ts">
+import { VotdSymbolId } from "@/symbols";
 import Vue from "vue";
 
 export default Vue.extend({
@@ -42,6 +47,14 @@ export default Vue.extend({
     },
     editing: {
       type: Boolean,
+    },
+  },
+
+  computed: {
+    redacted: {
+      get() {
+        return this.symbol.id === VotdSymbolId.REDACTED;
+      },
     },
   },
 

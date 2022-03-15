@@ -1,15 +1,37 @@
 <template>
   <v-container fluid>
-    <v-row justify="space-around">
-      <v-col v-for="symbol in collection.symbols" :key="symbol.id" cols="auto">
-        <SymbolCard
-          :symbol="symbol"
-          @input="updateSymbol"
-          :width="width"
-          :editing="editing"
-        />
-      </v-col>
-    </v-row>
+    <div class="mb-4" v-if="view.title || view.subtitle">
+      <div class="text-h5" v-if="view.title">{{ view.title }}</div>
+
+      <div class="text-subtitle-1" v-if="view.subtitle">
+        {{ view.subtitle }}
+      </div>
+    </div>
+
+    <div v-for="(category, index) in view.categories" :key="`category${index}`">
+      <div class="mb-4" v-if="category.title || category.subtitle">
+        <div class="text-h6" v-if="category.title">{{ category.title }}</div>
+
+        <div class="text-subtitle-1" v-if="category.subtitle">
+          {{ category.subtitle }}
+        </div>
+      </div>
+
+      <v-row justify="space-around">
+        <v-col
+          v-for="symbolId in category.symbols"
+          :key="`symbol${symbolId}`"
+          cols="auto"
+        >
+          <SymbolCard
+            :symbol="collection.find(symbolId)"
+            @input="updateSymbol"
+            :width="width"
+            :editing="editing"
+          />
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 
@@ -27,6 +49,10 @@ export default Vue.extend({
 
   props: {
     collection: {
+      type: Object,
+      required: true,
+    },
+    view: {
       type: Object,
       required: true,
     },
