@@ -40,14 +40,17 @@
     <v-navigation-drawer v-model="drawer" fixed temporary>
       <v-list nav>
         <v-list-item>
-          <v-list-item-title> VotD Symbol Helper </v-list-item-title>
+          <v-list-item-content>
+            <v-list-item-title>Symbol Helper</v-list-item-title>
+            <v-list-item-subtitle>Vow of the Disciple</v-list-item-subtitle>
+          </v-list-item-content>
         </v-list-item>
 
         <v-divider />
 
         <v-list-item two-line>
           <v-list-item-content>
-            <v-list-item-title> Symbol Size </v-list-item-title>
+            <v-list-item-title>Size of Symbols</v-list-item-title>
             <v-slider
               v-model="symbolWidth"
               max="400"
@@ -67,7 +70,44 @@
         <v-divider />
 
         <v-list-item>
-          <v-switch v-model="darkMode" label="Use the Darkness"></v-switch>
+          <v-switch v-model="darkMode" label="Use the Darkness?"></v-switch>
+        </v-list-item>
+
+        <v-divider />
+
+        <v-list-item
+          href="https://github.com/spiltcoffee/votd-symbols"
+          target="_blank"
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-github</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>spiltcoffee/votd-symbols</v-list-item-title>
+            <v-list-item-subtitle>GitHub</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item href="https://twitter.com/spiltcoffee" target="_blank">
+          <v-list-item-icon>
+            <v-icon>mdi-twitter</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>@spiltcoffee</v-list-item-title>
+            <v-list-item-subtitle>Twitter</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item href="https://www.bungie.net/" target="_blank">
+          <v-list-item-icon>
+            <v-icon>mdi-link-variant</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            All images are property of Bungie
+          </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
