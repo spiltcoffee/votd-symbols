@@ -89,8 +89,7 @@
       <v-card>
         <v-card-title> Are you sure? </v-card-title>
         <v-card-text>
-          This will discard all changes to symbol names. You cannot undo this
-          action.
+          This will discard all changes to symbol names.
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -143,17 +142,23 @@ export default Vue.extend({
       // ignore
     }
 
-    console.log(location.hash);
-
-    if (location.hash) {
+    if (location.search) {
       try {
-        const query = location.hash.replace(/^#/, "");
-        this.collection = VotdSymbolCollection.parse(query);
-      } catch {
-        // ignore
-        location.hash = "";
+        const serializedCollection = location.search.replace(/^\?/, "");
+        this.collection =
+          VotdSymbolCollection.deserialize(serializedCollection);
+      } catch (error) {
+        history.replaceState("", "", location.pathname);
       }
     }
+
+    window.addEventListener("popstate", (event) => {
+      try {
+        this.collection = VotdSymbolCollection.deserialize(event.state);
+      } catch (error) {
+        history.replaceState("", "", location.pathname);
+      }
+    });
   },
 
   computed: {
@@ -213,7 +218,16 @@ export default Vue.extend({
     endEditing() {
       this.editing = false;
       this.editingCollection = null as unknown as VotdSymbolCollection;
-      location.hash = VotdSymbolCollection.stringify(this.collection);
+      const serializedCollection = VotdSymbolCollection.serialize(
+        this.collection
+      );
+      history.pushState(
+        serializedCollection,
+        "",
+        serializedCollection
+          ? `${location.pathname}?${serializedCollection}`
+          : location.pathname
+      );
     },
   },
 });
