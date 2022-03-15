@@ -3,7 +3,7 @@ name: Redeploy votd-symbols
 
 on:
   workflow_run:
-    workflows: ["Continuous Deployment"]
+    workflows: ["Continuous Integration"]
     types:
       - completed
 
