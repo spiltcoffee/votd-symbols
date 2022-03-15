@@ -80,6 +80,27 @@
         :editing="editing"
       />
     </v-main>
+
+    <v-snackbar v-model="snackbar" timeout="2000">
+      {{ snackbarText }}
+    </v-snackbar>
+
+    <v-dialog v-model="resetDialog" persistent width="320">
+      <v-card>
+        <v-card-title> Are you sure? </v-card-title>
+        <v-card-text>
+          This will discard all changes to symbol names. You cannot undo this
+          action.
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="red" text @click="resetEditingAccept">
+            Yes, Reset
+          </v-btn>
+          <v-btn color="blue" @click="resetEditingCancel"> No, Keep </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-app>
 </template>
 
@@ -108,6 +129,8 @@ export default Vue.extend({
     editing: false,
     drawer: false,
     resetDialog: false,
+    snackbar: false,
+    snackbarText: "",
   }),
 
   mounted() {
@@ -149,21 +172,31 @@ export default Vue.extend({
     resetEditing() {
       this.resetDialog = true;
     },
-    resetEditingConfirm() {
+    resetEditingAccept() {
       this.resetDialog = false;
       this.collection = VotdSymbolCollection.default();
       this.endEditing();
+      this.snackbarText = "All Symbol Names Discarded";
+      this.snackbar = true;
+    },
+    resetEditingCancel() {
+      this.resetDialog = false;
     },
     startEditing() {
+      this.snackbar = false;
       this.editing = true;
       this.editingCollection = this.collection.clone();
     },
     acceptEditing() {
       this.collection = this.editingCollection;
       this.endEditing();
+      this.snackbarText = "Changes Saved";
+      this.snackbar = true;
     },
     cancelEditing() {
       this.endEditing();
+      this.snackbarText = "Changes Discarded";
+      this.snackbar = true;
     },
     endEditing() {
       this.editing = false;

@@ -3,7 +3,7 @@ import cloneDeep from "lodash.clonedeep";
 export class VotdSymbol {
   readonly id: string;
   readonly originalName: string;
-  private customName = "";
+  private _customName = "";
 
   constructor(id: string, originalName: string) {
     this.id = id;
@@ -15,19 +15,19 @@ export class VotdSymbol {
   }
 
   get name(): string {
-    return this.customName || this.originalName;
+    return this._customName || this.originalName;
   }
 
   set name(name: string) {
     if (name === this.originalName) {
-      this.reset();
+      this._customName = "";
     } else {
-      this.customName = name;
+      this._customName = name;
     }
   }
 
-  reset(): void {
-    this.customName = "";
+  get customName(): string {
+    return this._customName;
   }
 
   clone(): VotdSymbol {

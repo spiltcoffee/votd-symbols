@@ -7,10 +7,12 @@
       :width="width"
     />
     <v-text-field
+      class="mx-1 pb-2"
       v-if="editing"
       :label="symbol.originalName"
-      :value="symbol.name"
-      @input="updateName"
+      :value="symbol.customName"
+      @change="updateName"
+      hide-details
     ></v-text-field>
     <v-card-title class="symbol-title" v-else>{{ symbol.name }}</v-card-title>
   </v-card>
