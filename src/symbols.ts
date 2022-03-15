@@ -1,21 +1,71 @@
 import cloneDeep from "lodash.clonedeep";
 import qs from "qs";
 
+function encodeURIForAscii(unencodedString: string): string {
+  return encodeURIComponent(unencodedString).replace(
+    /%([0-9A-F]{2})/g,
+    function toSolidBytes(_, p1: string) {
+      return String.fromCharCode(parseInt(p1, 16));
+    }
+  );
+}
+
 function encodeBase64(unencodedString: string): string {
-  return window.btoa(unescape(encodeURIComponent(unencodedString)));
+  return btoa(encodeURIForAscii(unencodedString));
+}
+
+function decodeURIForAscii(encodedString: string): string {
+  return decodeURIComponent(
+    encodedString
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
 }
 
 function decodeBase64(encodedString: string): string {
-  return decodeURIComponent(escape(window.atob(encodedString)));
+  return decodeURIForAscii(atob(encodedString));
+}
+
+export enum VotdSymbolId {
+  REDACTED,
+  ASCENDANT_PLANE,
+  BLACK_GARDEN,
+  BLACK_HEART,
+  COMMUNE,
+  DARKNESS,
+  DRINK,
+  EARTH,
+  ENTER,
+  FLEET,
+  GIVE,
+  GRIEVE,
+  GUARDIAN,
+  HIVE,
+  KILL,
+  LIGHT,
+  LOVE,
+  PYRAMID,
+  REMEMBER,
+  SAVATHUN,
+  SCORN,
+  STOP,
+  TOWER,
+  TRAVELER,
+  WITNESS,
+  WORM,
+  WORSHIP,
 }
 
 export class VotdSymbol {
-  readonly id: number;
+  readonly id: VotdSymbolId;
   private imageName: string;
   readonly originalName: string;
   private _customName = "";
 
-  constructor(id: number, imageName: string, originalName: string) {
+  constructor(id: VotdSymbolId, imageName: string, originalName: string) {
     this.id = id;
     this.imageName = imageName;
     this.originalName = originalName;
@@ -97,32 +147,36 @@ export class VotdSymbolCollection {
 
   static default(): VotdSymbolCollection {
     return new VotdSymbolCollection([
-      new VotdSymbol(1, "ascendantplane", "Ascendant Plane"),
-      new VotdSymbol(2, "blackgarden", "Black Garden"),
-      new VotdSymbol(3, "blackheart", "Black Heart"),
-      new VotdSymbol(4, "commune", "Commune"),
-      new VotdSymbol(5, "darkness", "Darkness"),
-      new VotdSymbol(6, "drink", "Drink"),
-      new VotdSymbol(7, "earth", "Earth"),
-      new VotdSymbol(8, "enter", "Enter"),
-      new VotdSymbol(9, "fleet", "Fleet"),
-      new VotdSymbol(10, "give", "Give"),
-      new VotdSymbol(11, "grieve", "Grieve"),
-      new VotdSymbol(12, "guardian", "Guardian"),
-      new VotdSymbol(13, "hive", "Hive"),
-      new VotdSymbol(14, "kill", "Kill"),
-      new VotdSymbol(15, "light", "Light"),
-      new VotdSymbol(16, "love", "Love"),
-      new VotdSymbol(17, "pyramid", "Pyramid"),
-      new VotdSymbol(18, "remember", "Remember"),
-      new VotdSymbol(19, "savathun", "Savathûn"),
-      new VotdSymbol(20, "scorn", "Scorn"),
-      new VotdSymbol(21, "stop", "Stop"),
-      new VotdSymbol(22, "tower", "Tower"),
-      new VotdSymbol(23, "traveler", "Traveler"),
-      new VotdSymbol(24, "witness", "Witness"),
-      new VotdSymbol(25, "worm", "Worm"),
-      new VotdSymbol(26, "worship", "Worship"),
+      new VotdSymbol(
+        VotdSymbolId.ASCENDANT_PLANE,
+        "ascendantplane",
+        "Ascendant Plane"
+      ),
+      new VotdSymbol(VotdSymbolId.BLACK_GARDEN, "blackgarden", "Black Garden"),
+      new VotdSymbol(VotdSymbolId.BLACK_HEART, "blackheart", "Black Heart"),
+      new VotdSymbol(VotdSymbolId.COMMUNE, "commune", "Commune"),
+      new VotdSymbol(VotdSymbolId.DARKNESS, "darkness", "Darkness"),
+      new VotdSymbol(VotdSymbolId.DRINK, "drink", "Drink"),
+      new VotdSymbol(VotdSymbolId.EARTH, "earth", "Earth"),
+      new VotdSymbol(VotdSymbolId.ENTER, "enter", "Enter"),
+      new VotdSymbol(VotdSymbolId.FLEET, "fleet", "Fleet"),
+      new VotdSymbol(VotdSymbolId.GIVE, "give", "Give"),
+      new VotdSymbol(VotdSymbolId.GRIEVE, "grieve", "Grieve"),
+      new VotdSymbol(VotdSymbolId.GUARDIAN, "guardian", "Guardian"),
+      new VotdSymbol(VotdSymbolId.HIVE, "hive", "Hive"),
+      new VotdSymbol(VotdSymbolId.KILL, "kill", "Kill"),
+      new VotdSymbol(VotdSymbolId.LIGHT, "light", "Light"),
+      new VotdSymbol(VotdSymbolId.LOVE, "love", "Love"),
+      new VotdSymbol(VotdSymbolId.PYRAMID, "pyramid", "Pyramid"),
+      new VotdSymbol(VotdSymbolId.REMEMBER, "remember", "Remember"),
+      new VotdSymbol(VotdSymbolId.SAVATHUN, "savathun", "Savathûn"),
+      new VotdSymbol(VotdSymbolId.SCORN, "scorn", "Scorn"),
+      new VotdSymbol(VotdSymbolId.STOP, "stop", "Stop"),
+      new VotdSymbol(VotdSymbolId.TOWER, "tower", "Tower"),
+      new VotdSymbol(VotdSymbolId.TRAVELER, "traveler", "Traveler"),
+      new VotdSymbol(VotdSymbolId.WITNESS, "witness", "Witness"),
+      new VotdSymbol(VotdSymbolId.WORM, "worm", "Worm"),
+      new VotdSymbol(VotdSymbolId.WORSHIP, "worship", "Worship"),
     ]);
   }
 }
