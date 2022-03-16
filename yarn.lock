@@ -825,13 +825,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/cli-plugin-typescript@npm:~5.0.0":
-  version: 5.0.1
-  resolution: "@vue/cli-plugin-typescript@npm:5.0.1"
+"@vue/cli-plugin-typescript@npm:~5.0.3":
+  version: 5.0.3
+  resolution: "@vue/cli-plugin-typescript@npm:5.0.3"
   dependencies:
     "@babel/core": ^7.12.16
     "@types/webpack-env": ^1.15.2
-    "@vue/cli-shared-utils": ^5.0.1
+    "@vue/cli-shared-utils": ^5.0.3
     babel-loader: ^8.2.2
     fork-ts-checker-webpack-plugin: ^6.4.0
     globby: ^11.0.2
@@ -850,7 +850,7 @@ __metadata:
       optional: true
     vue-template-compiler:
       optional: true
-  checksum: 885f1cc865f391668298f22cf7b32fc1c7254386c44f075443d6110294b6127d7f099313846e67f40b57839adb892d1aa01ff2351c001859ccfe82188cc2a131
+  checksum: 9a32e8696139827ae20ee8b57a1639177fdb1c7361252e261c58a11dfd7510ab27dc6c78b4fc438ee0711a6a864946603d67791f07209adeb8f91571b4d13d88
   languageName: node
   linkType: hard
 
@@ -948,7 +948,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/cli-shared-utils@npm:^5.0.1, @vue/cli-shared-utils@npm:^5.0.3":
+"@vue/cli-shared-utils@npm:^5.0.3":
   version: 5.0.3
   resolution: "@vue/cli-shared-utils@npm:5.0.3"
   dependencies:
@@ -7440,7 +7440,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.15.0
     "@typescript-eslint/parser": ^5.15.0
     "@vue/cli-plugin-eslint": ~5.0.3
-    "@vue/cli-plugin-typescript": ~5.0.0
+    "@vue/cli-plugin-typescript": ~5.0.3
     "@vue/cli-service": ~5.0.3
     "@vue/eslint-config-typescript": ^10.0.0
     eslint: ^8.11.0
