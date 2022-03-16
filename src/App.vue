@@ -64,7 +64,7 @@
           <v-list-item-content>
             <v-list-item-title>Size of Symbols</v-list-item-title>
             <v-slider
-              v-model="symbolWidth"
+              v-model="width"
               max="400"
               min="50"
               thumb-label
@@ -190,15 +190,25 @@ export default Vue.extend({
     resetDialog: false,
     snackbar: false,
     snackbarText: "",
-    view: null as unknown as VotdSymbolView,
     viewObject: VIEWS[0],
   }),
 
   mounted() {
     try {
-      const lsSymbolWidth = localStorage.getItem("symbolWidth");
-      if (lsSymbolWidth) {
-        this.width = JSON.parse(lsSymbolWidth);
+      const lsWidth = localStorage.getItem("width");
+      if (lsWidth) {
+        this.width = JSON.parse(lsWidth);
+      }
+    } catch {
+      // ignore
+    }
+
+    try {
+      const lsView = localStorage.getItem("view");
+      if (lsView) {
+        const viewName = JSON.parse(lsView);
+        this.viewObject =
+          VIEWS.find((view) => view.name === viewName) || VIEWS[0];
       }
     } catch {
       // ignore
@@ -211,6 +221,21 @@ export default Vue.extend({
           VotdSymbolCollection.deserialize(serializedCollection);
       } catch (error) {
         history.replaceState("", "", location.pathname);
+      }
+    } else {
+      try {
+        const lsSerializedCollection = localStorage.getItem("collection");
+
+        if (lsSerializedCollection) {
+          const serializedCollection = JSON.parse(lsSerializedCollection);
+          if (serializedCollection) {
+            this.collection =
+              VotdSymbolCollection.deserialize(serializedCollection);
+            this.endEditing();
+          }
+        }
+      } catch {
+        // ignore
       }
     }
 
@@ -233,28 +258,29 @@ export default Vue.extend({
         localStorage.setItem("darkMode", JSON.stringify(newDarkMode));
       },
     },
-    symbolWidth: {
-      get() {
-        return this.width;
-      },
-      set(newWidth: number) {
-        this.width = newWidth;
-        localStorage.setItem("symbolWidth", JSON.stringify(newWidth));
-      },
-    },
     views: {
       get() {
         return VIEWS;
       },
     },
+    view: {
+      get() {
+        return this.viewObject.view();
+      },
+    },
   },
 
   watch: {
-    viewObject: {
-      handler(newValue) {
-        this.view = newValue.view();
+    width: {
+      handler(newWidth) {
+        localStorage.setItem("width", JSON.stringify(newWidth));
       },
-      immediate: true,
+    },
+    viewObject: {
+      handler(newViewObject) {
+        this.view = newViewObject.view();
+        localStorage.setItem("view", JSON.stringify(newViewObject.name));
+      },
     },
   },
 
@@ -304,6 +330,7 @@ export default Vue.extend({
           ? `${location.pathname}?${serializedCollection}`
           : location.pathname
       );
+      localStorage.setItem("collection", JSON.stringify(serializedCollection));
     },
   },
 });

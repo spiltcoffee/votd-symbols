@@ -9,7 +9,7 @@
     </div>
 
     <div v-for="(category, index) in view.categories" :key="`category${index}`">
-      <div class="mb-4" v-if="category.title || category.subtitle">
+      <div class="my-4" v-if="category.title || category.subtitle">
         <div class="text-h6" v-if="category.title">{{ category.title }}</div>
 
         <div class="text-subtitle-1" v-if="category.subtitle">
