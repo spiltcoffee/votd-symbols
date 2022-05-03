@@ -7516,7 +7516,7 @@ __metadata:
     vue-cli-plugin-vuetify: ~2.4.8
     vue-property-decorator: ^9.1.2
     vue-template-compiler: ^2.6.14
-    vuetify: ^2.6.0
+    vuetify: ^2.6.5
     vuetify-loader: ^1.7.0
     webpack: ^5.72.0
   languageName: unknown
@@ -7643,12 +7643,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuetify@npm:^2.6.0":
-  version: 2.6.4
-  resolution: "vuetify@npm:2.6.4"
+"vuetify@npm:^2.6.5":
+  version: 2.6.5
+  resolution: "vuetify@npm:2.6.5"
   peerDependencies:
     vue: ^2.6.4
-  checksum: 8ae236ff92df0d1584942da3893d0a9cead1141c72bc12bd113786351935f3fdcc8f30de6e05cc9b9754e07669464808e6b6979775d691a68f3574ba6e577bfa
+  checksum: 8aa4ffd7e8e7601bd7c4b0a723e1433ef2cf395f85526ab6ae8113e48d82ffdf7af3d48036c18393448d98dae7d35cf4922b99d05f8d158dfd1430ba5a4814ed
   languageName: node
   linkType: hard
 
