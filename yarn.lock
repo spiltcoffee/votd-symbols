@@ -5,14 +5,14 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@achrinza/node-ipc@npm:9.2.2":
-  version: 9.2.2
-  resolution: "@achrinza/node-ipc@npm:9.2.2"
+"@achrinza/node-ipc@npm:^9.2.5":
+  version: 9.2.5
+  resolution: "@achrinza/node-ipc@npm:9.2.5"
   dependencies:
     "@node-ipc/js-queue": 2.0.3
     event-pubsub: 4.3.0
     js-message: 1.0.7
-  checksum: cb80b9b753bd28ac52d5ca598eab10f91f311424adf9b4f0ac7e4caee4b43edc28b3f3129118dd6f94f24cc9b34464fc58301463ef42dc1a465c5c43412446f9
+  checksum: 64432a96ddd9711858a5274af28fcf82fc3bd8c62f736ca5e3ee47cff810350788e1d2acede85236d5e80e66952107e7cef32c0f5572664b82466fc4a0e4ae5f
   languageName: node
   linkType: hard
 
@@ -811,10 +811,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/cli-overlay@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "@vue/cli-overlay@npm:5.0.4"
-  checksum: 1e0ab447044aa522f2e17ecf89854e08d942045b2fc6aca564bc0cc1bdf735687cae58b14e2026ce0c06137a83a8268aa4887a71a7363366b6a034ec26457b7b
+"@vue/cli-overlay@npm:^5.0.6":
+  version: 5.0.6
+  resolution: "@vue/cli-overlay@npm:5.0.6"
+  checksum: 676191aca4ad2e944ab0dfd43e64389b597f198ae4afc4ab3e3a9c7cd185c845e322fdba59f52aad54f6f0b3663989ca26f027785868b5e468d9d1b5cb08a5b0
   languageName: node
   linkType: hard
 
@@ -834,14 +834,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/cli-plugin-router@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "@vue/cli-plugin-router@npm:5.0.4"
+"@vue/cli-plugin-router@npm:^5.0.6":
+  version: 5.0.6
+  resolution: "@vue/cli-plugin-router@npm:5.0.6"
   dependencies:
-    "@vue/cli-shared-utils": ^5.0.4
+    "@vue/cli-shared-utils": ^5.0.6
   peerDependencies:
     "@vue/cli-service": ^3.0.0 || ^4.0.0 || ^5.0.0-0
-  checksum: da28ddf3288ed1e15abce649a3e9fffe1db5099b13e93dd44b282a90598b9f1e54f1ea5a7f96156dcf53e436ead95c61f785ab7386b79d0e8d143631db357134
+  checksum: eae9a0e6c56db64ff83bab1196c6ef74b5e1d9a036e7246671016517231cdcea703e68a7410caebf5a9fa3627e93131eaa484389c37cdaf1844e7b073249d291
   languageName: node
   linkType: hard
 
@@ -874,27 +874,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/cli-plugin-vuex@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "@vue/cli-plugin-vuex@npm:5.0.4"
+"@vue/cli-plugin-vuex@npm:^5.0.6":
+  version: 5.0.6
+  resolution: "@vue/cli-plugin-vuex@npm:5.0.6"
   peerDependencies:
     "@vue/cli-service": ^3.0.0 || ^4.0.0 || ^5.0.0-0
-  checksum: 2b9188ab9021cebb457f59f15ad6a1a657e52cbc4c27d21b6080367bb0ccc44695a2d71283988e12cf8ca9db3e5578837d54f27a2ea1470561667df75a7ad012
+  checksum: 86ca5161f514bc32f228506707a60e286f1141dd215e52d6d81d7646f354bcfb9a39bda55c75445200228ee76d16584a7a58ceb556a849af946014d6c2a99293
   languageName: node
   linkType: hard
 
-"@vue/cli-service@npm:~5.0.4":
-  version: 5.0.4
-  resolution: "@vue/cli-service@npm:5.0.4"
+"@vue/cli-service@npm:~5.0.6":
+  version: 5.0.6
+  resolution: "@vue/cli-service@npm:5.0.6"
   dependencies:
     "@babel/helper-compilation-targets": ^7.12.16
     "@soda/friendly-errors-webpack-plugin": ^1.8.0
     "@soda/get-current-script": ^1.0.2
     "@types/minimist": ^1.2.0
-    "@vue/cli-overlay": ^5.0.4
-    "@vue/cli-plugin-router": ^5.0.4
-    "@vue/cli-plugin-vuex": ^5.0.4
-    "@vue/cli-shared-utils": ^5.0.4
+    "@vue/cli-overlay": ^5.0.6
+    "@vue/cli-plugin-router": ^5.0.6
+    "@vue/cli-plugin-vuex": ^5.0.6
+    "@vue/cli-shared-utils": ^5.0.6
     "@vue/component-compiler-utils": ^3.3.0
     "@vue/vue-loader-v15": "npm:vue-loader@^15.9.7"
     "@vue/web-component-wrapper": ^1.3.0
@@ -964,15 +964,15 @@ __metadata:
       optional: true
   bin:
     vue-cli-service: bin/vue-cli-service.js
-  checksum: 92066fbbced34926560ded1b51433a48728c4e287874edf50efa9bdecaff109cd86476adfde8c72e4aa7f5f14b90950b0ade098208bb6abf457d357026e7cb63
+  checksum: cb91ec993b0d09802aa54e166aa30bcf4a01af83f94ee292c611f185b38a214e0a61a3499635d56f1b5cbcda4ab3baee2be3ed147756b3103746c6ae69ae357c
   languageName: node
   linkType: hard
 
-"@vue/cli-shared-utils@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "@vue/cli-shared-utils@npm:5.0.4"
+"@vue/cli-shared-utils@npm:^5.0.4, @vue/cli-shared-utils@npm:^5.0.6":
+  version: 5.0.6
+  resolution: "@vue/cli-shared-utils@npm:5.0.6"
   dependencies:
-    "@achrinza/node-ipc": 9.2.2
+    "@achrinza/node-ipc": ^9.2.5
     chalk: ^4.1.2
     execa: ^1.0.0
     joi: ^17.4.0
@@ -984,7 +984,7 @@ __metadata:
     read-pkg: ^5.1.1
     semver: ^7.3.4
     strip-ansi: ^6.0.0
-  checksum: 8210c48eced9d67fe3d298b0202d59f83cb3df87c24f929fe3c23c144c94492dc47f1b9bfc4df170f92c1ec526ae317db4ad4a896100027b33a91c2fdd12dadb
+  checksum: 65896199d0a8315f68c990cf5d13f14aa93dc851162aeec9930d012739b6b1d2208b41322f0c650f7ade25766ae21fe8174f4bb3c712aa465d62222199ef92bf
   languageName: node
   linkType: hard
 
@@ -7522,7 +7522,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.28.0
     "@vue/cli-plugin-eslint": ~5.0.4
     "@vue/cli-plugin-typescript": ~5.0.4
-    "@vue/cli-service": ~5.0.4
+    "@vue/cli-service": ~5.0.6
     "@vue/eslint-config-typescript": ^10.0.0
     eslint: ^8.17.0
     eslint-config-prettier: ^8.3.0
