@@ -7540,7 +7540,7 @@ __metadata:
     vue-property-decorator: ^9.1.2
     vue-template-compiler: ^2.6.14
     vuetify: ^2.6.6
-    vuetify-loader: ^1.7.0
+    vuetify-loader: ^1.8.0
     webpack: ^5.73.0
   languageName: unknown
   linkType: soft
@@ -7653,18 +7653,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuetify-loader@npm:^1.7.0":
-  version: 1.7.3
-  resolution: "vuetify-loader@npm:1.7.3"
+"vuetify-loader@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "vuetify-loader@npm:1.8.0"
   dependencies:
     decache: ^4.6.0
     file-loader: ^6.2.0
     loader-utils: ^2.0.0
   peerDependencies:
+    gm: ^1.23.0
+    pug: ^2.0.0
+    sharp: ^0.21.0
     vue-template-compiler: ^2.6.10
     vuetify: ^1.3.0 || ^2.0.0
     webpack: ^4.0.0 || ^5.0.0
-  checksum: 81a31698101ec25e05bf36224af273c315a85787bb4ef41d0fe76f28c4c7d8d409f9ad75535b09b8ccae4cdef4e6fe80b19f148e23f351cd4fc36f9400049421
+  peerDependenciesMeta:
+    gm:
+      optional: true
+    pug:
+      optional: true
+    sharp:
+      optional: true
+    vue-template-compiler:
+      optional: true
+  checksum: 03df584503813f56a3e484d0cc2b5d2060721de4c26bdf9f91fa1d7ca4736507c8125364f454f8785138defa8391d97ae3d270877ab0788a76e35fa47ef8b301
   languageName: node
   linkType: hard
 
