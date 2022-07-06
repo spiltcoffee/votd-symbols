@@ -1364,7 +1364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn-walk@npm:^8.0.0, acorn-walk@npm:^8.0.2":
+"acorn-walk@npm:^8.0.0, acorn-walk@npm:^8.0.2, acorn-walk@npm:^8.2.0":
   version: 8.2.0
   resolution: "acorn-walk@npm:8.2.0"
   checksum: 1715e76c01dd7b2d4ca472f9c58968516a4899378a63ad5b6c2d668bba8da21a71976c14ec5f5b75f887b6317c4ae0b897ab141c831d741dc76024d8745f1ad1
@@ -7585,7 +7585,7 @@ __metadata:
     vue-property-decorator: ^9.1.2
     vue-template-compiler: ^2.6.14
     vuetify: ^2.6.7
-    vuetify-loader: ^1.8.0
+    vuetify-loader: ^1.9.0
     webpack: ^5.73.0
   languageName: unknown
   linkType: soft
@@ -7698,10 +7698,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuetify-loader@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "vuetify-loader@npm:1.8.0"
+"vuetify-loader@npm:^1.9.0":
+  version: 1.9.0
+  resolution: "vuetify-loader@npm:1.9.0"
   dependencies:
+    acorn: ^8.4.1
+    acorn-walk: ^8.2.0
     decache: ^4.6.0
     file-loader: ^6.2.0
     loader-utils: ^2.0.0
@@ -7709,7 +7711,7 @@ __metadata:
     gm: ^1.23.0
     pug: ^2.0.0
     sharp: ^0.21.0
-    vue-template-compiler: ^2.6.10
+    vue: ^2.7.2
     vuetify: ^1.3.0 || ^2.0.0
     webpack: ^4.0.0 || ^5.0.0
   peerDependenciesMeta:
@@ -7719,9 +7721,7 @@ __metadata:
       optional: true
     sharp:
       optional: true
-    vue-template-compiler:
-      optional: true
-  checksum: 03df584503813f56a3e484d0cc2b5d2060721de4c26bdf9f91fa1d7ca4736507c8125364f454f8785138defa8391d97ae3d270877ab0788a76e35fa47ef8b301
+  checksum: 816d0ddbd05208cef724fe27b4108ba4ec9f2186edc2c9b2d54b90c4ab2a15d7d0a282ed225e7cd9dbde6d680202c03e6a0a06b85fa6df71c9cc40034c059984
   languageName: node
   linkType: hard
 
