@@ -845,13 +845,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/cli-plugin-typescript@npm:~5.0.7":
-  version: 5.0.7
-  resolution: "@vue/cli-plugin-typescript@npm:5.0.7"
+"@vue/cli-plugin-typescript@npm:~5.0.8":
+  version: 5.0.8
+  resolution: "@vue/cli-plugin-typescript@npm:5.0.8"
   dependencies:
     "@babel/core": ^7.12.16
     "@types/webpack-env": ^1.15.2
-    "@vue/cli-shared-utils": ^5.0.7
+    "@vue/cli-shared-utils": ^5.0.8
     babel-loader: ^8.2.2
     fork-ts-checker-webpack-plugin: ^6.4.0
     globby: ^11.0.2
@@ -869,7 +869,7 @@ __metadata:
       optional: true
     vue-template-compiler:
       optional: true
-  checksum: 9412e6cb0e46a8ad4a62a86916dcce8eb5d2783c3a2f797ce9c1facb13f765360a1e119892cc51aef45bfd084df42204d1c4e4daae1ac843192eb45d9822506d
+  checksum: 3f8619753581f8d87ce7c1dc5d9ccfced8b91eb72d44322c1864e44e2b73700e98cbdb49bc54d51ce8ca1b33b1e9085218f8ca694fd38d193c8bd8bb01b1956a
   languageName: node
   linkType: hard
 
@@ -967,9 +967,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/cli-shared-utils@npm:^5.0.7":
-  version: 5.0.7
-  resolution: "@vue/cli-shared-utils@npm:5.0.7"
+"@vue/cli-shared-utils@npm:^5.0.7, @vue/cli-shared-utils@npm:^5.0.8":
+  version: 5.0.8
+  resolution: "@vue/cli-shared-utils@npm:5.0.8"
   dependencies:
     "@achrinza/node-ipc": ^9.2.5
     chalk: ^4.1.2
@@ -983,7 +983,7 @@ __metadata:
     read-pkg: ^5.1.1
     semver: ^7.3.4
     strip-ansi: ^6.0.0
-  checksum: 75bf67c95d1a065db63071e8120f7180042b24300bed22506a939f657811734c715032056a658e8637c039dd9e75f688373380a11d5fc378dc8d0d341438abed
+  checksum: 20c0c9e6411b861ac7c25427cf84081c09c113ab09c602480850af6974fcf5c5ef18197ed4fa62093cea3f6631975bfe69fb42e99d19c8ed1884de0c4e6d555d
   languageName: node
   linkType: hard
 
@@ -7538,7 +7538,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.30.5
     "@typescript-eslint/parser": ^5.30.5
     "@vue/cli-plugin-eslint": ~5.0.7
-    "@vue/cli-plugin-typescript": ~5.0.7
+    "@vue/cli-plugin-typescript": ~5.0.8
     "@vue/cli-service": ~5.0.7
     "@vue/eslint-config-typescript": ^10.0.0
     eslint: ^8.19.0
