@@ -1009,14 +1009,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:2.7.5":
-  version: 2.7.5
-  resolution: "@vue/compiler-sfc@npm:2.7.5"
+"@vue/compiler-sfc@npm:2.7.7":
+  version: 2.7.7
+  resolution: "@vue/compiler-sfc@npm:2.7.7"
   dependencies:
     "@babel/parser": ^7.18.4
     postcss: ^8.4.14
     source-map: ^0.6.1
-  checksum: 81608274dd12b5794f8e5d8a083837feb0da0b4dec490e5c7ab44475b91ae21415ee686b9b6691d81eab7d28baad140fabede6c2aea46d11505ae562207c71ed
+  checksum: 7771fdb5172cd4185cd7ef01ffae59ef8391361875b314ce2a379a588ccc542ab9cae4e67e6d3c7e51d62202b1772591fe4447d855129b274f2c6d955cc85311
   languageName: node
   linkType: hard
 
@@ -7552,11 +7552,11 @@ __metadata:
     sass: ~1.53.0
     sass-loader: ^13.0.2
     typescript: ~4.7.4
-    vue: ^2.7.5
+    vue: ^2.7.7
     vue-class-component: ^7.2.3
     vue-cli-plugin-vuetify: ~2.5.1
     vue-property-decorator: ^9.1.2
-    vue-template-compiler: ^2.7.5
+    vue-template-compiler: ^2.7.7
     vuetify: ^2.6.7
     vuetify-loader: ^1.9.1
     webpack: ^5.73.0
@@ -7647,13 +7647,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-template-compiler@npm:^2.7.5":
-  version: 2.7.5
-  resolution: "vue-template-compiler@npm:2.7.5"
+"vue-template-compiler@npm:^2.7.7":
+  version: 2.7.7
+  resolution: "vue-template-compiler@npm:2.7.7"
   dependencies:
     de-indent: ^1.0.2
     he: ^1.2.0
-  checksum: 9f13e05fbe1634c2ed7de870bec5325838ba05040d14b2dcdf31a7b00640ab9c9140cab3f2036223ec8f099d40e741031f6faa427872a89dc2b07f5f6fd511ee
+  checksum: 3ef7956ba1907206224e8bd198010c27f67dd14d29840b457b2a36c17c288e1af314f04e82aaa0734bc22bf92cf55b3e86fe2aae662fe2c4e45894808de69636
   languageName: node
   linkType: hard
 
@@ -7664,13 +7664,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^2.7.5":
-  version: 2.7.5
-  resolution: "vue@npm:2.7.5"
+"vue@npm:^2.7.7":
+  version: 2.7.7
+  resolution: "vue@npm:2.7.7"
   dependencies:
-    "@vue/compiler-sfc": 2.7.5
+    "@vue/compiler-sfc": 2.7.7
     csstype: ^3.1.0
-  checksum: 2daa69afec7adae125b678e945b59d2fa51e8775a41ff452a5db0020367774ecd697855092b30f15eeb5fde51660596ea21d5805a2e9c5db151fc076f80178d7
+  checksum: 3c6dacc33351d729e2d1b41242ad8ece5a1879d438a56d29c8ce3523ad5bf10f0e5c8ff622dcd778ab935248b14aa958e58199e7ffd87bcbe67df091f9045992
   languageName: node
   linkType: hard
 
