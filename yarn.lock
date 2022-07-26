@@ -7558,7 +7558,7 @@ __metadata:
     vue-property-decorator: ^9.1.2
     vue-template-compiler: ^2.7.8
     vuetify: ^2.6.7
-    vuetify-loader: ^1.9.1
+    vuetify-loader: ^1.9.2
     webpack: ^5.74.0
   languageName: unknown
   linkType: soft
@@ -7674,9 +7674,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuetify-loader@npm:^1.9.1":
-  version: 1.9.1
-  resolution: "vuetify-loader@npm:1.9.1"
+"vuetify-loader@npm:^1.9.2":
+  version: 1.9.2
+  resolution: "vuetify-loader@npm:1.9.2"
   dependencies:
     acorn: ^8.4.1
     acorn-walk: ^8.2.0
@@ -7697,7 +7697,7 @@ __metadata:
       optional: true
     sharp:
       optional: true
-  checksum: 502d0af308c06f900c15286799a664a67d45bf4ab2f793b98ace23d11ae9b83181b9a27522ab331508a4b6e26b1cbf9713f36b2aa7ed03b8c98b46b48f3b8b55
+  checksum: 4e04323092e017f37e641940269443434055e3b01ffb8f7f05b3e79c3ff477cda0fc4f2f2b095b51f4e1f5435c3264772477b49ac2cf0dcb8f0ac04b4f18418b
   languageName: node
   linkType: hard
 
