@@ -7609,7 +7609,7 @@ __metadata:
     typescript: ~4.7.4
     vue: ^2.7.8
     vue-class-component: ^7.2.3
-    vue-cli-plugin-vuetify: ~2.5.1
+    vue-cli-plugin-vuetify: ~2.5.2
     vue-property-decorator: ^9.1.2
     vue-template-compiler: ^2.7.8
     vuetify: ^2.6.9
@@ -7627,9 +7627,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-cli-plugin-vuetify@npm:~2.5.1":
-  version: 2.5.1
-  resolution: "vue-cli-plugin-vuetify@npm:2.5.1"
+"vue-cli-plugin-vuetify@npm:~2.5.2":
+  version: 2.5.2
+  resolution: "vue-cli-plugin-vuetify@npm:2.5.2"
   dependencies:
     null-loader: ^4.0.1
     semver: ^7.1.2
@@ -7641,7 +7641,7 @@ __metadata:
       optional: true
     vuetify-loader:
       optional: true
-  checksum: 55035cc1c911669c35f362c2ce511ba2ea6a7e085b689254e49fa4eeb320510ab7c5139ea5308b01ef245dc7230c5b28fc7c7f64a7a471841079fca4bcb5b463
+  checksum: e22df599b29da3cb511a81afa8fd9ff62df6d4ce837b307dced4881b6fa532b064c602803f60f032e85c40e167ef9f405580f3dfce21fe2c110553eeba4716bf
   languageName: node
   linkType: hard
 
