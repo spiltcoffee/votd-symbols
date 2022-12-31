@@ -33,6 +33,8 @@ jobs:
 
       - run: yarn install --immutable
       - run: yarn build
+        env:
+          VOTD_SYMBOLS_PATH: /votd-symbols/
 
       - uses: actions/configure-pages@v2
 
