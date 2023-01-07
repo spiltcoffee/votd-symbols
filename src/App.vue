@@ -90,6 +90,7 @@
         <v-list-item
           href="https://github.com/spiltcoffee/votd-symbols"
           target="_blank"
+          rel="noreferrer noopener"
         >
           <v-list-item-icon>
             <v-icon>mdi-github</v-icon>
@@ -101,7 +102,11 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item href="https://spiltcoffee.com/" target="_blank">
+        <v-list-item
+          href="https://spiltcoffee.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           <v-list-item-icon>
             <v-icon>mdi-web</v-icon>
           </v-list-item-icon>
@@ -112,7 +117,11 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item href="https://www.bungie.net/" target="_blank">
+        <v-list-item
+          href="https://www.bungie.net/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           <v-list-item-icon>
             <v-icon>mdi-link-variant</v-icon>
           </v-list-item-icon>
