@@ -101,14 +101,14 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item href="https://twitter.com/spiltcoffee" target="_blank">
+        <v-list-item href="https://spiltcoffee.com/" target="_blank">
           <v-list-item-icon>
-            <v-icon>mdi-twitter</v-icon>
+            <v-icon>mdi-web</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>@spiltcoffee</v-list-item-title>
-            <v-list-item-subtitle>Twitter</v-list-item-subtitle>
+            <v-list-item-title>spiltcoffee.com</v-list-item-title>
+            <v-list-item-subtitle>Website</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
 
