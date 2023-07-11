@@ -40,5 +40,5 @@
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.6.1"
 }
