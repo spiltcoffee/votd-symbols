@@ -36,7 +36,7 @@ jobs:
         env:
           VOTD_SYMBOLS_PATH: /votd-symbols/
 
-      - uses: actions/configure-pages@v3
+      - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v2
         with:
