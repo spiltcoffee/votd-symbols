@@ -35,7 +35,7 @@
     "vue-cli-plugin-vuetify": "~2.5.8",
     "vue-template-compiler": "^2.7.16",
     "vuetify-loader": "^1.9.2",
-    "webpack": "^5.92.0"
+    "webpack": "^5.92.1"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
