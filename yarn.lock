@@ -7509,16 +7509,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:~1.79.1":
-  version: 1.79.1
-  resolution: "sass@npm:1.79.1"
+"sass@npm:~1.79.2":
+  version: 1.79.2
+  resolution: "sass@npm:1.79.2"
   dependencies:
     chokidar: ^4.0.0
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: df014f287055c750349b7461ed8477662c7f9c8999cc1b10eb9096ccd4a67f850511e8828ba8780515513741a932d01b1948bd33d40cdac1403a13b6718fa14c
+  checksum: 7877859d64278650ef4106efb2110266e0fc0b482036df523d0927d43c9da43b800d159ab7d9c1e8c7e6352dc5f7b4d5ac881a8fc6f5ebfb8dbdcdf6038a2c5d
   languageName: node
   linkType: hard
 
@@ -8665,7 +8665,7 @@ __metadata:
     lodash.clonedeep: ^4.5.0
     prettier: ^3.3.3
     qs: ^6.13.0
-    sass: ~1.79.1
+    sass: ~1.79.2
     sass-loader: ^16.0.1
     typescript: ~5.6.2
     vue: ^2.7.16
