@@ -7685,9 +7685,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^16.0.3":
-  version: 16.0.3
-  resolution: "sass-loader@npm:16.0.3"
+"sass-loader@npm:^16.0.4":
+  version: 16.0.4
+  resolution: "sass-loader@npm:16.0.4"
   dependencies:
     neo-async: ^2.6.2
   peerDependencies:
@@ -7707,7 +7707,7 @@ __metadata:
       optional: true
     webpack:
       optional: true
-  checksum: 888b2fbe4e1455778ecb9fde77d9803fc5b7c01137740512f701acb1716830a9d8290cf664734f8472455353fa09a919c693a6d2c42c4d21c1fdc77a2a06db52
+  checksum: 91abdbb8285e8241ec2938e4237675dc2792a51149878cae0489b292cfea6afa2867a601fbed4b8cb7c4a6a12185e437ad7441651b562ffae1703b08cbbca919
   languageName: node
   linkType: hard
 
@@ -8872,7 +8872,7 @@ __metadata:
     prettier: ^3.4.2
     qs: ^6.13.1
     sass: ~1.82.0
-    sass-loader: ^16.0.3
+    sass-loader: ^16.0.4
     typescript: ~5.7.2
     vue: ^2.7.16
     vue-class-component: ^7.2.3
