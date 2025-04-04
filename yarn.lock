@@ -7829,9 +7829,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:~1.86.1":
-  version: 1.86.1
-  resolution: "sass@npm:1.86.1"
+"sass@npm:~1.86.3":
+  version: 1.86.3
+  resolution: "sass@npm:1.86.3"
   dependencies:
     "@parcel/watcher": ^2.4.1
     chokidar: ^4.0.0
@@ -7842,7 +7842,7 @@ __metadata:
       optional: true
   bin:
     sass: sass.js
-  checksum: b578c4a7e34cf0edd4fd907a36529c7feeec769162ba776fc5701caa24adc01e81ccf104013a5da6a36431d4820b3ea47d84843ed6244cd6948d10fda01a2aa1
+  checksum: 743091217d4f72d261177409d2aa592ca6be49e95c84c8bd06c3ff06ee0113b8532ad6b30c95d923cc1b3470241989983bdeb3b0710b1570ffed0768aa4e5227
   languageName: node
   linkType: hard
 
@@ -9058,7 +9058,7 @@ __metadata:
     lodash.clonedeep: ^4.5.0
     prettier: ^3.5.3
     qs: ^6.14.0
-    sass: ~1.86.1
+    sass: ~1.86.3
     sass-loader: ^16.0.5
     typescript: ~5.8.2
     vue: ^2.7.16
