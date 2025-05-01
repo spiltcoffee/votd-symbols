@@ -3953,9 +3953,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-vue@npm:^10.0.1":
-  version: 10.0.1
-  resolution: "eslint-plugin-vue@npm:10.0.1"
+"eslint-plugin-vue@npm:^10.1.0":
+  version: 10.1.0
+  resolution: "eslint-plugin-vue@npm:10.1.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.4.0
     natural-compare: ^1.4.0
@@ -3966,7 +3966,7 @@ __metadata:
   peerDependencies:
     eslint: ^8.57.0 || ^9.0.0
     vue-eslint-parser: ^10.0.0
-  checksum: 59bebc66bca65aec2383b735ac87fb3f298783f133311473c4850aca9d56f5b9707856056ac91ed9c67a5c2398c76b97490274beca0b16181bf243a467c36805
+  checksum: 1eb2fe57b9e63e608a232441e3ff39e4509571313a7feee741b357027ee510c2005858d136ea1117df22b00ae33302b7dc796b2086ef5ef9e667689c3438d6c1
   languageName: node
   linkType: hard
 
@@ -9072,7 +9072,7 @@ __metadata:
     eslint: ^8.57.0
     eslint-config-prettier: ^10.1.2
     eslint-plugin-prettier: ^5.2.6
-    eslint-plugin-vue: ^10.0.1
+    eslint-plugin-vue: ^10.1.0
     lint-staged: ^15.5.1
     lodash.clonedeep: ^4.5.0
     prettier: ^3.5.3
